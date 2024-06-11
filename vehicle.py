@@ -1,3 +1,9 @@
+from enum import Enum
+
+class VehicleType(Enum):
+    EMERGENCY = "EMERGENCY"
+    EGO = "EGO"
+
 class Location:
     def __init__(self, x = 0, y = 0, z = 0):
         self.x = x
@@ -8,10 +14,11 @@ class Location:
         return f"Location(x={self.x}, y={self.y} z={self.z})"
 
 class Vehicle:
-
-    def __init__(self, speed, initial_location=Location()):
+    
+    def __init__(self, speed, initial_location, type):
         self._speed = speed
         self._initial_location = initial_location
+        self._type = type
 
     def get_speed(self):
         return self._speed
@@ -25,7 +32,23 @@ class Vehicle:
     def set_location(self, x, y, z):
         self._initial_location = Location(x, y, z)
 
+    def get_type(self):
+        return self._type
 
-ego = Vehicle(30)
-print(ego.get_location())
-print("Done")
+    def set_type(self, type):
+        self._type = type
+
+    def __repr__(self):
+        return f"Ego(speed={self._speed}, initial_location={self._initial_location} type={self._type})"
+
+
+class EgoVehicle(Vehicle):
+
+    def __init__(self, speed, initial_location, type):
+        super().__init__(speed, initial_location, type)
+
+    def addCamera():
+        pass
+
+ego = EgoVehicle(30, [1,2,3], VehicleType.EGO)
+print(ego)
