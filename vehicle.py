@@ -11,7 +11,7 @@ class Location:
         self.z = z
 
     def __repr__(self):
-        return f"Location(x={self.x}, y={self.y} z={self.z})"
+        return f"Location(x={self.x}, y={self.y}, z={self.z})"
 
 class Vehicle:
     
@@ -44,11 +44,11 @@ class Vehicle:
 
 class EgoVehicle(Vehicle):
 
-    def __init__(self, speed, location, type):
+    def __init__(self, speed, location):
         super().__init__(speed, location, VehicleType.EGO)
 
     def addCamera():
         pass
 
-ego = EgoVehicle(30, [1,2,3], VehicleType.EGO)
+ego = EgoVehicle(30, Location(1,2,3))
 print(ego)
