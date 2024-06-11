@@ -16,8 +16,8 @@ class Vehicle:
     def get_speed(self):
         return self._speed
 
-    def set_speed(self, new_speed):
-        self._speed = new_speed
+    def set_speed(self, speed):
+        self._speed = speed
 
     def get_location(self):
         return self._initial_location
