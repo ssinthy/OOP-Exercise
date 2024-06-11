@@ -3,7 +3,9 @@ from enum import Enum
 class VehicleType(Enum):
     EMERGENCY = "EMERGENCY"
     EGO = "EGO"
-    NPC = "NPC"
+    BICYCLE = "BICYCLE"
+    MOTORBIKE = "MOTORBIKE" 
+    NORMAL = "NORMAL"
 
 class Location:
     def __init__(self, x = 0, y = 0, z = 0):
