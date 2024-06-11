@@ -40,11 +40,11 @@ class Vehicle:
     def set_type(self, type):
         self._type = type
 
-    def get_is_on_autopilot(self):
+    def get_autopilot_status(self):
         return self._is_on_autopilot
 
-    def set_is_on_autopilot(self, is_on_autopilot):
-        self._is_on_autopilot = is_on_autopilot
+    def set_autopilot_status(self, bool):
+        self._is_on_autopilot = bool
 
     def __repr__(self):
         return f"Ego(speed={self._speed}, location={self._location} type={self._type})"
