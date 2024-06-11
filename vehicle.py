@@ -15,9 +15,9 @@ class Location:
 
 class Vehicle:
     
-    def __init__(self, speed, initial_location, type):
+    def __init__(self, speed, location, type):
         self._speed = speed
-        self._initial_location = initial_location
+        self._location = location
         self._type = type
 
     def get_speed(self):
@@ -27,10 +27,10 @@ class Vehicle:
         self._speed = speed
 
     def get_location(self):
-        return self._initial_location
+        return self._location
 
     def set_location(self, x, y, z):
-        self._initial_location = Location(x, y, z)
+        self._location = Location(x, y, z)
 
     def get_type(self):
         return self._type
@@ -39,13 +39,13 @@ class Vehicle:
         self._type = type
 
     def __repr__(self):
-        return f"Ego(speed={self._speed}, initial_location={self._initial_location} type={self._type})"
+        return f"Ego(speed={self._speed}, location={self._location} type={self._type})"
 
 
 class EgoVehicle(Vehicle):
 
-    def __init__(self, speed, initial_location, type):
-        super().__init__(speed, initial_location, type)
+    def __init__(self, speed, _location, type):
+        super().__init__(speed, _location, VehicleType.EGO)
 
     def addCamera():
         pass
