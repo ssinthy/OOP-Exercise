@@ -3,6 +3,7 @@ from enum import Enum
 class VehicleType(Enum):
     EMERGENCY = "EMERGENCY"
     EGO = "EGO"
+    NPC = "NPC"
 
 class Location:
     def __init__(self, x = 0, y = 0, z = 0):
@@ -15,10 +16,11 @@ class Location:
 
 class Vehicle:
     
-    def __init__(self, speed, location, type):
+    def __init__(self, speed = 0, location = Location(0,0,0), type = VehicleType.NPC, is_on_autopilot = False):
         self._speed = speed
         self._location = location
         self._type = type
+        self._is_on_autopilot = is_on_autopilot
 
     def get_speed(self):
         return self._speed
@@ -37,6 +39,12 @@ class Vehicle:
 
     def set_type(self, type):
         self._type = type
+
+    def get_is_on_autopilot(self):
+        return self._is_on_autopilot
+
+    def set_is_on_autopilot(self, is_on_autopilot):
+        self._is_on_autopilot = is_on_autopilot
 
     def __repr__(self):
         return f"Ego(speed={self._speed}, location={self._location} type={self._type})"
