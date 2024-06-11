@@ -44,8 +44,8 @@ class Vehicle:
 
 class EgoVehicle(Vehicle):
 
-    def __init__(self, speed, _location, type):
-        super().__init__(speed, _location, VehicleType.EGO)
+    def __init__(self, speed, location, type):
+        super().__init__(speed, location, VehicleType.EGO)
 
     def addCamera():
         pass
