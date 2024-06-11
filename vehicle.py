@@ -19,3 +19,4 @@ class Vehicle:
 
 ego = Vehicle(30, [0,0,0])
 print(ego.getInitialLocation())
+print("Done")
